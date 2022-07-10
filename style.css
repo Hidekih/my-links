@@ -1,0 +1,155 @@
+:root {
+    --white: #F4F4F2;
+    --highlight: #9748A1;
+    --blue-gray: #202933;
+    --black: #13181E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p, span {
+    font-family: 'Karla', sans-serif;
+}
+
+h1, h2, button, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes animedArrow {
+    from {
+        margin-right: 4px;
+    }
+    top {
+        margin-right: 0px;
+    }
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto 0 auto;
+    width: 18rem;
+    max-width: 90%;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.avatar-container img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 12rem;
+
+    outline: 4px solid var(--black);
+    outline-offset: 4px;
+}
+
+.avatar-container p {
+    margin-top: 0.5rem;
+    color: var(--white);
+}
+
+.avatar-container p::before {
+    color: var(--black);
+    font-weight: 700;
+    content: '<';
+}
+
+.avatar-container p::after {
+    color: var(--black);
+    font-weight: 700;
+    content: '/>';
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    color:  var(--white);
+}
+
+nav {
+    margin-top: 3rem;
+}
+
+ul li {
+    list-style: none;
+    height: 42px;
+    width: 100%;
+    background: #202933;
+    border-radius: 8px 12px 8px 12px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+
+    transition: margin-left ease-in 0.15s;
+}
+
+ul li:hover {
+    margin-left: 0.25rem;
+}
+
+ul li + li {
+    margin-top: 1.5rem;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+
+    font-weight: 500;
+    font-size: 1.1rem;  
+    color: var(--white);
+    text-decoration: none;
+}
+
+ul li a img.btn-arrow {
+    visibility: hidden;
+    opacity: 0;
+
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+ul li a img.btn-arrow.visible {
+    visibility: visible;
+    opacity: 1;
+
+    /* TODO */
+    /* animation: animedArrow ease-in 0.3s; */
+}
+
+ul li:hover {
+    margin-left: 0.25rem;
+}
+
+#background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    
+    background-image: url("./assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-position: bottom;
+}
